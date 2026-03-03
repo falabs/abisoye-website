@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abisoye Falabi | #BuildingfortheNextBillion</title>
+    <meta name="description" content="Abisoye Falabi - Product Leader, Founder of Coinley & Elites.africa, Building the Future of Payments in Africa">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Abisoye Falabi | #BuildingfortheNextBillion">
+    <meta property="og:description" content="Product Leader, Founder, and Community Builder. Building the future of payments in Africa.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0A0A0A;
+            --secondary: #1A1A2E;
+            --accent: #00D4AA;
+            --accent-dark: #00B894;
+            --text: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --white: #FFFFFF;
+            --bg: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --gradient: linear-gradient(135deg, #00D4AA 0%, #00B894 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .cta-btn {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--accent-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hashtag {
+            color: var(--accent-dark);
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--bg);
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.25rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            background: var(--bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-card .label {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        /* Ventures Section */
+        .ventures {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .venture-card {
+            background: var(--bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .venture-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .venture-header {
+            background: var(--primary);
+            padding: 2rem;
+            color: var(--white);
+        }
+
+        .venture-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .venture-header .tag {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .venture-body {
+            padding: 2rem;
+        }
+
+        .venture-body p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .venture-features {
+            list-style: none;
+        }
+
+        .venture-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text);
+        }
+
+        .venture-features li i {
+            color: var(--accent);
+        }
+
+        .venture-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 6rem 5%;
+            background: var(--bg);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--accent-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Community Section */
+        .community {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .community-card {
+            background: var(--bg);
+            padding: 2rem;
+            border-radius: 16px;
+            transition: transform 0.3s;
+        }
+
+        .community-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .community-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .community-card .role {
+            color: var(--accent-dark);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .community-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 6rem 5%;
+            background: var(--bg);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .content-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .content-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .content-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-link {
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-btn.primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .contact-btn.secondary {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        footer .hashtag {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">AF<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#ventures">Ventures</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#content">Content</a></li>
+        </ul>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate">
+                <i class="fas fa-rocket"></i>
+                Building for the Next Billion
+            </div>
+            <h1 class="animate delay-1">Hi, I'm <span class="highlight">Abisoye Falabi</span></h1>
+            <p class="animate delay-2">
+                Product Leader, Founder, and Community Builder. I build products that bridge the gap between traditional finance and crypto — <span class="hashtag">#BuildingfortheNextBillion</span>
+            </p>
+            <div class="hero-buttons animate delay-3">
+                <a href="#ventures" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    View My Work
+                </a>
+                <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="social-links animate delay-3">
+                <a href="https://x.com/Falabs" target="_blank" title="X/Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://linkedin.com/in/falabiabisoye" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://youtube.com/@falabs" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:falabslab@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>I'm a product leader with a passion for building solutions that unlock financial access for millions.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Bridging Finance & Technology</h3>
+                <p>
+                    With over 10 years of experience in product management and fintech, I've dedicated my career to building products that make money move faster, cheaper, and more accessible — especially for Africa and emerging markets.
+                </p>
+                <p>
+                    My journey has taken me from building tech communities in Lagos to leading product at Patricia Technologies, and now to founding my own ventures focused on stablecoin payments and bill payments.
+                </p>
+                <p>
+                    I believe the next billion users will come from Africa and emerging markets, and I'm building the infrastructure to make that possible.
+                </p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">10+</div>
+                    <div class="label">Years in Product</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">9,700+</div>
+                    <div class="label">LinkedIn Followers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">2</div>
+                    <div class="label">Companies Founded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="number">10+</div>
+                    <div class="label">Communities Led</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures Section -->
+    <section class="ventures" id="ventures">
+        <div class="section-header">
+            <h2>My Ventures</h2>
+            <p>Building the future of payments in Africa and beyond.</p>
+        </div>
+        <div class="ventures-grid">
+            <div class="venture-card">
+                <div class="venture-header">
+                    <h3>Coinley</h3>
+                    <span class="tag">Fintech</span>
+                </div>
+                <div class="venture-body">
+                    <p>Accept crypto payments instantly. Stablecoin payment platform for merchants in Africa and global e-commerce.</p>
+                    <ul class="venture-features">
+                        <li><i class="fas fa-check"></i> 1% transaction fee</li>
+                        <li><i class="fas fa-check"></i> Instant settlements</li>
+                        <li><i class="fas fa-check"></i> WooCommerce & Shopify</li>
+                        <li><i class="fas fa-check"></i> No fiat conversion required</li>
+                    </ul>
+                    <a href="https://coinley.io" target="_blank" class="venture-link">
+                        Visit Coinley <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="venture-card">
+                <div class="venture-header" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931A 100%);">
+                    <h3>Elites.africa</h3>
+                    <span class="tag">Bill Payments</span>
+                </div>
+                <div class="venture-body">
+                    <p>Pay bills with stablecoins. Airtime, data, electricity, cable TV, and more — all powered by USDT/USDC.</p>
+                    <ul class="venture-features">
+                        <li><i class="fas fa-check"></i> Pay with USDT or USDC</li>
+                        <li><i class="fas fa-check"></i> Instant delivery</li>
+                        <li><i class="fas fa-check"></i> Nigeria-wide coverage</li>
+                        <li><i class="fas fa-check"></i> $0.50 minimum</li>
+                    </ul>
+                    <a href="https://elites.africa" target="_blank" class="venture-link">
+                        Visit Elites.africa <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="section-header">
+            <h2>Experience</h2>
+            <p>A journey from community building to product leadership.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - Present</div>
+                <div class="timeline-title">Founder</div>
+                <div class="timeline-company">Coinley & Elites.africa</div>
+                <div class="timeline-description">Building stablecoin payment infrastructure for Africa. Target: £100k/month revenue.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - 2024</div>
+                <div class="timeline-title">Head of Product</div>
+                <div class="timeline-company">Patricia Technologies</div>
+                <div class="timeline-description">Led product strategy for crypto portfolio management and payment solutions.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2015 - Present</div>
+                <div class="timeline-title">Founder & Community Lead</div>
+                <div class="timeline-company">dotNet Lagos & Azure Centre Usergroup</div>
+                <div class="timeline-description">Built technology communities with 300+ members across Nigeria. Organized meetups, workshops, and mentored developers.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2014 - 2015</div>
+                <div class="timeline-title">Community Relations Manager</div>
+                <div class="timeline-company">Intel Corporation</div>
+                <div class="timeline-description">Drove adoption of Intel maker boards and IoT solutions across Nigeria. Organized technical trainings and mentorship programs.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <div class="section-header">
+            <h2>Community Leadership</h2>
+            <p>Giving back to the tech community that gave me my start.</p>
+        </div>
+        <div class="community-grid">
+            <div class="community-card">
+                <h3>dotNet Lagos Usergroup</h3>
+                <div class="role">Founder & Community Lead</div>
+                <p>Established and operationalized the Nigerian branch of the Dotnet Foundation. Expanded to Ghana and Togo. Managed teams of 6-10 volunteers.</p>
+            </div>
+            <div class="community-card">
+                <h3>Azure Centre Usergroup</h3>
+                <div class="role">Organizer</div>
+                <p>A 296-member community initiative bringing together IT experts to share Azure knowledge. 6+ years of organizing meetups and events.</p>
+            </div>
+            <div class="community-card">
+                <h3>NatWest Accelerator</h3>
+                <div class="role">Mentor</div>
+                <p>Empowering early-stage digital and tech startup founders. Specialising in product development, go-to-market strategies, and scaling innovation.</p>
+            </div>
+            <div class="community-card">
+                <h3>RCCG Lagos & Ogun</h3>
+                <div class="role">Youth & Young Adult President</div>
+                <p>Steering leadership and mentorship strategy for youth and young adults. Facilitating monthly youth services, workshops, and empowerment programs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content" id="content">
+        <div class="section-header">
+            <h2>Content & Thought Leadership</h2>
+            <p>Sharing knowledge on product management, crypto, and building for Africa.</p>
+        </div>
+        <div class="content-grid">
+            <div class="content-card">
+                <i class="fab fa-youtube"></i>
+                <h3>YouTube Channel</h3>
+                <p>"Breaking Into Tech" series - helping Nigerians and Africans break into technology careers.</p>
+                <a href="https://youtube.com/@falabs" target="_blank" class="content-link">Watch Videos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn Articles</h3>
+                <p>Regular insights on product management, crypto, fintech, and building products for emerging markets.</p>
+                <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="content-link">Read Articles <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-card">
+                <i class="fab fa-x-twitter"></i>
+                <h3>X/Twitter</h3>
+                <p>Daily insights on product, crypto payments, and building for Africa. Follow for threads and updates.</p>
+                <a href="https://x.com/Falabs" target="_blank" class="content-link">Follow <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="content-card">
+                <i class="fas fa-podcast"></i>
+                <h3>Podcasts & Speaking</h3>
+                <p>Appearing on fintech podcasts and speaking at tech conferences across Africa and beyond.</p>
+                <a href="#contact" class="content-link">Invite Me <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Let's Connect</h2>
+        <p>Interested in collaboration, speaking opportunities, or just want to say hi? I'd love to hear from you.</p>
+        <div class="contact-buttons">
+            <a href="mailto:falabslab@gmail.com" class="contact-btn primary">
+                <i class="fas fa-envelope"></i>
+                Email Me
+            </a>
+            <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="contact-btn secondary">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Abisoye Falabi. Built with <span class="hashtag">#BuildingfortheNextBillion</span></p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card, .venture-card, .community-card, .content-card, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
