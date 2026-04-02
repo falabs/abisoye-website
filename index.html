@@ -141,6 +141,35 @@
             z-index: 1;
         }
 
+        .hero-profile {
+            position: absolute;
+            top: 6rem;
+            right: 5%;
+            z-index: 1;
+        }
+
+        .hero-profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .hero-profile {
+                position: static;
+                margin: 0 auto 1.5rem;
+                text-align: center;
+            }
+
+            .hero-profile img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -675,6 +704,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-profile">
+            <img src="abisoye-profile.jpg" alt="Abisoye Profile Photo" />
+        </div>
         <div class="hero-content">
             <div class="hero-badge animate">
                 <i class="fas fa-rocket"></i>
