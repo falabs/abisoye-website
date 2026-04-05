@@ -323,15 +323,7 @@
             text-align: center;
             padding: 6rem 5% 5rem;
         }
-        .hero-content { max-width: 730px; }
-
-            width: 110px; height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 2rem;
-            display: block;
-            border: 2px solid rgba(255, 255, 255, 0.12);
-        }
+        .hero-content { max-width: 730px; position: relative; z-index: 1; }
         .hero-badge {
             display: inline-block;
             font-size: 0.75rem;
@@ -602,12 +594,24 @@
             .about-bio { grid-template-columns: 1fr; gap: 1.5rem; }
             .ventures-grid, .community-grid, .content-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-photo-wrapper { width: 110px; height: 110px; }
+            .hero-photo { width: 110px; height: 110px; }
+            .section-inner { padding: 0 16px; }
+            .about, .ventures, .content-section, .contact {
+                padding: 3.5rem 5%;
+            }
         }
         @media (max-width: 480px) {
-            .display-hero { font-size: 1.875rem; }
-            .section-heading { font-size: 1.5rem; }
+            .display-hero { font-size: 1.5rem; line-height: 1.15; }
+            .section-heading { font-size: 1.375rem; }
             .hero-buttons, .contact-buttons { flex-direction: column; align-items: center; }
             .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .hero { padding: 5rem 5% 3rem; }
+            .hero-photo-wrapper { width: 96px; height: 96px; }
+            .hero-photo { width: 96px; height: 96px; }
+            .about, .ventures, .content-section, .contact {
+                padding: 3rem 5%;
+            }
         }
     </style>
 </head>
@@ -618,10 +622,7 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">Abisoye Falabi</a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#ventures">Ventures</a></li>
-
-                <li><a href="#communities">Community</a></li>
                 <li><a href="#content">Content</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -647,6 +648,39 @@
                 <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://youtube.com/@falabs" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventures -->
+    <section class="ventures section-dark" id="ventures">
+        <div class="section-inner reveal">
+            <h2 class="section-heading">My Ventures</h2>
+            <p class="sub-headline">Building companies at the intersection of crypto and payments.</p>
+
+            <div class="ventures-grid">
+                <div class="venture-card reveal">
+                    <div class="venture-tag">Payments Infrastructure</div>
+                    <h3>Coinley</h3>
+                    <p class="body-text">Non-custodial stablecoin payment infrastructure for platforms and merchants globally. Accept wallet payments without touching crypto risk.</p>
+                    <ul class="venture-features">
+                        <li>Customers pay with any popular crypto token</li>
+                        <li>Stablecoins as the settlement layer</li>
+                        <li>Merchants receive stablecoins instantly</li>
+                    </ul>
+                    <a href="https://coinley.io" target="_blank" class="venture-link">Visit Coinley <span>›</span></a>
+                </div>
+                <div class="venture-card reveal">
+                    <div class="venture-tag">Africa</div>
+                    <h3>Elites.africa</h3>
+                    <p class="body-text">Pay everyday bills with stablecoins across Nigeria. Airtime, data, electricity, cable TV, and more, powered by USDT and USDC.</p>
+                    <ul class="venture-features">
+                        <li>Pay with USDT or USDC</li>
+                        <li>Instant delivery</li>
+                        <li>Nigeria-wide coverage</li>
+                    </ul>
+                    <a href="https://elites.africa" target="_blank" class="venture-link">Visit Elites.africa <span>›</span></a>
+                </div>
             </div>
         </div>
     </section>
@@ -684,69 +718,6 @@
                 <div>
                     <h3>Building With Context</h3>
                     <p>15+ years across fintech, e-commerce, and blockchain. Led teams of 75+ across four regions. Products I've directed have served 1M+ customers at a leading crypto exchange and $200M+ raised across companies I've worked with. Also served as CTO of a 500 Global startup. That track record informs everything I build now.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ventures -->
-    <section class="ventures section-dark" id="ventures">
-        <div class="section-inner reveal">
-            <h2 class="section-heading">My Ventures</h2>
-            <p class="sub-headline">Building companies at the intersection of crypto and payments.</p>
-
-            <div class="ventures-grid">
-                <div class="venture-card reveal">
-                    <div class="venture-tag">Payments Infrastructure</div>
-                    <h3>Coinley</h3>
-                    <p class="body-text">Non-custodial stablecoin payment infrastructure for platforms and merchants globally. Accept wallet payments without touching crypto risk.</p>
-                    <ul class="venture-features">
-                        <li>Accept USDT and USDC payments</li>
-                        <li>Instant settlements</li>
-                        <li>Custom SDK &amp; APIs</li>
-                        <li>Global coverage</li>
-                    </ul>
-                    <a href="https://coinley.io" target="_blank" class="venture-link">Visit Coinley <span>›</span></a>
-                </div>
-                <div class="venture-card reveal">
-                    <div class="venture-tag">Africa</div>
-                    <h3>Elites.africa</h3>
-                    <p class="body-text">Pay everyday bills with stablecoins across Nigeria. Airtime, data, electricity, cable TV, and more, powered by USDT and USDC.</p>
-                    <ul class="venture-features">
-                        <li>Pay with USDT or USDC</li>
-                        <li>Instant delivery</li>
-                        <li>Nigeria-wide coverage</li>
-                    </ul>
-                    <a href="https://elites.africa" target="_blank" class="venture-link">Visit Elites.africa <span>›</span></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Communities -->
-    <section class="communities section-light" id="communities">
-        <div class="section-inner reveal">
-            <h2 class="section-heading section-heading-light">Communities I Run</h2>
-            <p class="sub-headline sub-headline-light">Building and nurturing the Microsoft developer ecosystem across Nigeria.</p>
-
-            <div class="community-grid">
-                <div class="community-card reveal">
-                    <div class="community-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>dotNet Lagos</h3>
-                    <div class="role">Founder &amp; Organizer</div>
-                    <p class="body-text">A community of developers, IT Pros and hobbyists who use, build, and extend the Microsoft development stack. From C# and F# to .NET Core and Xamarin — real-world hands-on approach to the dotnet ecosystem.</p>
-                    <a href="https://meetup.com/dotnet-lagos" target="_blank" class="community-link">Join on Meetup <span>›</span></a>
-                </div>
-                <div class="community-card reveal">
-                    <div class="community-icon">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <h3>.NET Nigeria</h3>
-                    <div class="role">Founder &amp; Organizer</div>
-                    <p class="body-text">Uniting every .NET developer in Nigeria. From Xamarin to .NET Core MVC — showing how to build futuristic apps with a first-class, hands-on approach to real-world problems and what's new in the dotnet ecosystem.</p>
-                    <a href="https://meetup.com/dotnet-nigeria" target="_blank" class="community-link">Join on Meetup <span>›</span></a>
                 </div>
             </div>
         </div>
