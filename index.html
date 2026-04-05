@@ -390,10 +390,12 @@
         .ventures .sub-headline { margin-bottom: 3.5rem; }
         .ventures-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .venture-card {
-            background: var(--bg-dark-surface);
+            background: #ffffff;
             border-radius: 12px;
             padding: 2.5rem;
             text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.06);
         }
         .venture-tag {
             display: inline-block;
@@ -408,14 +410,14 @@
         .venture-card h3 {
             font-size: 1.75rem; font-weight: 600;
             letter-spacing: -0.02em;
-            color: var(--text-white) !important;
+            color: var(--text-dark) !important;
             margin-bottom: 0.75rem;
         }
-        .venture-card .body-text { margin-bottom: 1.25rem; }
+        .venture-card .body-text { margin-bottom: 1.25rem; color: var(--text-dark-80); }
         .venture-features { list-style: none; margin-bottom: 1.5rem; }
         .venture-features li {
             display: flex; align-items: center; gap: 0.6rem;
-            font-size: 0.88rem; color: var(--text-white-80);
+            font-size: 0.88rem; color: var(--text-dark-80);
             padding: 0.25rem 0;
         }
         .venture-features li::before {
@@ -428,11 +430,11 @@
         .venture-link {
             display: inline-flex; align-items: center; gap: 0.3rem;
             font-size: 0.88rem; font-weight: 400;
-            color: var(--link-blue-dark);
+            color: var(--link-blue-light);
             text-decoration: none;
             transition: all 0.2s;
         }
-        .venture-link:hover { color: var(--text-white); }
+        .venture-link:hover { color: var(--apple-blue); }
         .venture-card {
             transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                         box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -478,22 +480,22 @@
         .content-section .sub-headline { margin-bottom: 3rem; }
         .content-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         .content-card {
-            background: #ffffff;
+            background: var(--bg-dark-surface);
             border-radius: 12px;
             padding: 2rem 1.75rem;
             text-align: left;
         }
-        .content-card i { font-size: 1.75rem; color: var(--apple-blue); margin-bottom: 1rem; }
-        .content-card h3 { font-size: 1.06rem; font-weight: 600; color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
-        .content-card .body-text-light { font-size: 0.88rem; margin-bottom: 1.25rem; }
+        .content-card i { font-size: 1.75rem; color: var(--link-blue-dark); margin-bottom: 1rem; }
+        .content-card h3 { font-size: 1.06rem; font-weight: 600; color: var(--text-white); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+        .content-card .body-text-light { font-size: 0.88rem; color: var(--text-white-80); margin-bottom: 1.25rem; }
         .content-link {
             display: inline-flex; align-items: center; gap: 0.3rem;
             font-size: 0.88rem; font-weight: 400;
-            color: var(--link-blue-light);
+            color: var(--link-blue-dark);
             text-decoration: none;
             transition: all 0.2s;
         }
-        .content-link:hover { color: var(--apple-blue); }
+        .content-link:hover { color: var(--text-white); }
         .content-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -602,10 +604,10 @@
     </section>
 
     <!-- Ventures -->
-    <section class="ventures section-dark" id="ventures">
+    <section class="ventures section-light" id="ventures">
         <div class="section-inner reveal">
-            <h2 class="section-heading">My Ventures</h2>
-            <p class="sub-headline">Building companies at the intersection of crypto and payments.</p>
+            <h2 class="section-heading section-heading-light">My Ventures</h2>
+            <p class="sub-headline sub-headline-light">Building companies at the intersection of crypto and payments.</p>
 
             <div class="ventures-grid">
                 <div class="venture-card reveal">
@@ -634,12 +636,17 @@
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about section-dark" id="about">
+    <!-- Bridges -->
+    <section class="about section-dark" id="bridges">
         <div class="section-inner reveal">
             <h2 class="section-heading">Bridges Finance &amp; Technology</h2>
             <p class="sub-headline">The payments industry has had the same players for 50 years. Stablecoins change that. 15+ years building digital products across fintech, e-commerce, and blockchain. Led teams of 75+ people. Directed product at a crypto exchange with 1M+ customers. Helped raise $200M+ across companies. Today I'm building the infrastructure to make stablecoin payments mainstream.</p>
+        </div>
+    </section>
 
+    <!-- About -->
+    <section class="about section-dark" id="about">
+        <div class="section-inner reveal">
             <div class="stats-grid">
                 <div class="stat-cell">
                     <div class="number">15+</div>
