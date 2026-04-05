@@ -378,10 +378,10 @@
         .about-bio h3 {
             font-size: 1.31rem; font-weight: 600;
             letter-spacing: 0.231px;
-            color: var(--text-dark);
+            color: var(--text-white);
             margin-bottom: 0.75rem;
         }
-        .about-bio p { font-size: 0.94rem; line-height: 1.65; color: var(--text-dark-80); }
+        .about-bio p { font-size: 0.94rem; line-height: 1.65; color: var(--text-white-80); }
 
         /* ============================================
            VENTURES
@@ -408,7 +408,7 @@
         .venture-card h3 {
             font-size: 1.75rem; font-weight: 600;
             letter-spacing: -0.02em;
-            color: var(--text-white);
+            color: var(--text-white) !important;
             margin-bottom: 0.75rem;
         }
         .venture-card .body-text { margin-bottom: 1.25rem; }
@@ -470,57 +470,6 @@
             margin-bottom: 0.4rem;
         }
         .timeline-desc { font-size: 0.88rem; line-height: 1.6; color: var(--text-dark-80); }
-
-        /* ============================================
-           COMMUNITIES
-           ============================================ */
-        .communities { text-align: center; padding: 5.5rem 5%; }
-        .communities .sub-headline { margin-bottom: 3rem; }
-        .community-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .community-card {
-            background: var(--bg-dark-surface);
-            border-radius: 12px;
-            padding: 2.5rem;
-            text-align: left;
-        }
-        .community-icon {
-            width: 44px; height: 44px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem;
-            color: var(--link-blue-dark);
-            margin-bottom: 1.25rem;
-        }
-        .community-card h3 {
-            font-size: 1.31rem; font-weight: 600;
-            letter-spacing: 0.231px;
-            color: var(--text-white);
-            margin-bottom: 0.5rem;
-        }
-        .community-card .role {
-            font-size: 0.75rem; font-weight: 600;
-            color: var(--apple-blue);
-            text-transform: uppercase; letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
-        }
-        .community-card .body-text { margin-bottom: 1.25rem; }
-        .community-link {
-            display: inline-flex; align-items: center; gap: 0.3rem;
-            font-size: 0.88rem; font-weight: 400;
-            color: var(--link-blue-dark);
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        .community-link:hover { color: var(--text-white); }
-        .community-card {
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .community-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
-        }
 
         /* ============================================
            CONTENT
@@ -592,7 +541,7 @@
             .display-hero { font-size: 2.25rem; letter-spacing: -0.02em; }
             .section-heading { font-size: 1.75rem; }
             .about-bio { grid-template-columns: 1fr; gap: 1.5rem; }
-            .ventures-grid, .community-grid, .content-grid { grid-template-columns: 1fr; }
+            .ventures-grid, .content-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .hero-photo-wrapper { width: 110px; height: 110px; }
             .hero-photo { width: 110px; height: 110px; }
@@ -705,7 +654,7 @@
                     <div class="label">Global Alumni (2016)</div>
                 </div>
                 <div class="stat-cell">
-                    <div class="number">10+</div>
+                    <div class="number">3</div>
                     <div class="label">Communities Led</div>
                 </div>
             </div>
