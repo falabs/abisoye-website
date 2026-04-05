@@ -73,8 +73,47 @@
         /* ============================================
            HERO ENTRANCE ANIMATION
            ============================================ */
-        .hero-photo {
+        .hero-photo-wrapper {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 2rem;
             animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+        }
+        .hero-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #5e6ad2 0deg,
+                #828fff 60deg,
+                #5e6ad2 120deg,
+                #7170ff 180deg,
+                #5e6ad2 240deg,
+                #828fff 300deg,
+                #5e6ad2 360deg
+            );
+            animation: photoRingSpin 6s linear infinite;
+        }
+        @keyframes photoRingSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .hero-photo {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .hero-photo-wrapper:hover .hero-photo {
+            transform: scale(1.08) translateY(-4px);
         }
         .hero-badge {
             animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
@@ -593,7 +632,9 @@
     <!-- Hero -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="abisoye-profile.jpg" alt="Abisoye Falabi" class="hero-photo">
+            <div class="hero-photo-wrapper">
+                <img src="abisoye-profile.jpg" alt="Abisoye Falabi" class="hero-photo">
+            </div>
             <div class="hero-badge">Global Payments Infrastructure</div>
             <h1 class="display-hero">Cards enabled e-commerce. Bank payments improved it. <span class="highlight">Wallet payments will redefine it.</span></h1>
             <p class="sub-headline">I'm Abisoye Falabi. Fintech and blockchain expert. 15+ years building products used by 100M+ people. Today I'm building the infrastructure layer that makes wallet payments the next normal at Coinley.</p>
@@ -683,10 +724,10 @@
     </section>
 
     <!-- Communities -->
-    <section class="communities section-dark" id="communities">
+    <section class="communities section-light" id="communities">
         <div class="section-inner reveal">
-            <h2 class="section-heading">Communities I Run</h2>
-            <p class="sub-headline">Building and nurturing the Microsoft developer ecosystem across Nigeria.</p>
+            <h2 class="section-heading section-heading-light">Communities I Run</h2>
+            <p class="sub-headline sub-headline-light">Building and nurturing the Microsoft developer ecosystem across Nigeria.</p>
 
             <div class="community-grid">
                 <div class="community-card reveal">
@@ -712,28 +753,28 @@
     </section>
 
     <!-- Content -->
-    <section class="content-section" id="content">
+    <section class="content-section section-dark" id="content">
         <div class="section-inner reveal">
-            <h2 class="section-heading section-heading-light">Podcasts &amp; Speaking</h2>
-            <p class="sub-headline sub-headline-light">Speaking at fintech and crypto conferences globally. Creating content on product leadership, payments, and blockchain.</p>
+            <h2 class="section-heading">Podcasts &amp; Speaking</h2>
+            <p class="sub-headline">Speaking at fintech and crypto conferences globally. Creating content on product leadership, payments, and blockchain.</p>
 
             <div class="content-grid">
                 <div class="content-card reveal">
                     <i class="fab fa-youtube"></i>
                     <h3>YouTube Talks</h3>
-                    <p class="body-text-light">Talks on product leadership, crypto payments, and building in fintech.</p>
+                    <p class="body-text">Talks on product leadership, crypto payments, and building in fintech.</p>
                     <a href="https://youtube.com/playlist?list=PL6X29hO_Vptafd_Y7tqr-2HBk1nsOvvRQ&si=5hXJOnhFjYF1CLJg" target="_blank" class="content-link">Watch Talks <span>›</span></a>
                 </div>
                 <div class="content-card reveal">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn Articles</h3>
-                    <p class="body-text-light">Insights on product management, crypto, fintech, and building products for global markets.</p>
+                    <p class="body-text">Insights on product management, crypto, fintech, and building products for global markets.</p>
                     <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="content-link">Read Articles <span>›</span></a>
                 </div>
                 <div class="content-card reveal">
                     <i class="fab fa-x-twitter"></i>
                     <h3>X / Twitter</h3>
-                    <p class="body-text-light">Insights on product, crypto payments, and fintech. Follow for threads and updates.</p>
+                    <p class="body-text">Insights on product, crypto payments, and fintech. Follow for threads and updates.</p>
                     <a href="https://x.com/Falabs" target="_blank" class="content-link">Follow <span>›</span></a>
                 </div>
             </div>
