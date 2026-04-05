@@ -53,6 +53,94 @@
         }
 
         /* ============================================
+           APPLE SCROLL ANIMATIONS
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(48px);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           HERO ENTRANCE ANIMATION
+           ============================================ */
+        .hero-photo {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s both;
+        }
+        .hero-badge {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+        }
+        .display-hero {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
+        }
+        .hero .sub-headline {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.45s both;
+        }
+        .hero-buttons {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s both;
+        }
+        .social-row {
+            animation: heroFadeUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.75s both;
+        }
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(32px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           HERO BACKGROUND — Animated gradient orb
+           ============================================ */
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 113, 227, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: orbFloat 8s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(88, 86, 214, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: orbFloat 10s ease-in-out infinite reverse;
+        }
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(20px, -30px) scale(1.05); }
+            66% { transform: translate(-10px, 20px) scale(0.97); }
+        }
+        .hero-content { position: relative; z-index: 1; }
+
+        /* ============================================
            NAVIGATION — Apple Glass Nav
            ============================================ */
         nav {
@@ -197,7 +285,7 @@
             padding: 6rem 5% 5rem;
         }
         .hero-content { max-width: 730px; }
-        .hero-photo {
+
             width: 110px; height: 110px;
             border-radius: 50%;
             object-fit: cover;
@@ -314,6 +402,14 @@
             transition: all 0.2s;
         }
         .venture-link:hover { color: var(--text-white); }
+        .venture-card {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .venture-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+        }
 
         /* ============================================
            EXPERIENCE
@@ -386,6 +482,14 @@
             transition: all 0.2s;
         }
         .community-link:hover { color: var(--text-white); }
+        .community-card {
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .community-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+        }
 
         /* ============================================
            CONTENT
@@ -410,6 +514,13 @@
             transition: all 0.2s;
         }
         .content-link:hover { color: var(--apple-blue); }
+        .content-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
 
         /* ============================================
            CONTACT
@@ -470,7 +581,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#ventures">Ventures</a></li>
-                <li><a href="#experience">Experience</a></li>
+
                 <li><a href="#communities">Community</a></li>
                 <li><a href="#content">Content</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -501,7 +612,7 @@
 
     <!-- About -->
     <section class="about section-light" id="about">
-        <div class="section-inner">
+        <div class="section-inner reveal">
             <h2 class="section-heading section-heading-light">Bridges Finance &amp; Technology</h2>
             <p class="sub-headline sub-headline-light">The payments industry has had the same players for 50 years. Stablecoins change that. 15+ years building digital products across fintech, e-commerce, and blockchain. Led teams of 75+ people. Directed product at a crypto exchange with 1M+ customers. Helped raise $200M+ across companies. Today I'm building the infrastructure to make stablecoin payments mainstream.</p>
 
@@ -515,8 +626,8 @@
                     <div class="label">LinkedIn Followers</div>
                 </div>
                 <div class="stat-cell">
-                    <div class="number">2</div>
-                    <div class="label">Companies Founded</div>
+                    <div class="number">500</div>
+                    <div class="label">Global Alumni (2016)</div>
                 </div>
                 <div class="stat-cell">
                     <div class="number">10+</div>
@@ -531,7 +642,7 @@
                 </div>
                 <div>
                     <h3>Building With Context</h3>
-                    <p>15+ years across fintech, e-commerce, and blockchain. Led teams of 75+ across four regions. Products I've directed have served 1M+ customers at a leading crypto exchange and $200M+ raised across companies I've worked with. That track record informs everything I build now.</p>
+                    <p>15+ years across fintech, e-commerce, and blockchain. Led teams of 75+ across four regions. Products I've directed have served 1M+ customers at a leading crypto exchange and $200M+ raised across companies I've worked with. Also served as CTO of a 500 Global startup. That track record informs everything I build now.</p>
                 </div>
             </div>
         </div>
@@ -539,25 +650,24 @@
 
     <!-- Ventures -->
     <section class="ventures section-dark" id="ventures">
-        <div class="section-inner">
+        <div class="section-inner reveal">
             <h2 class="section-heading">My Ventures</h2>
             <p class="sub-headline">Building companies at the intersection of crypto and payments.</p>
 
             <div class="ventures-grid">
-                <div class="venture-card">
+                <div class="venture-card reveal">
                     <div class="venture-tag">Payments Infrastructure</div>
                     <h3>Coinley</h3>
                     <p class="body-text">Non-custodial stablecoin payment infrastructure for platforms and merchants globally. Accept wallet payments without touching crypto risk.</p>
                     <ul class="venture-features">
                         <li>Accept USDT and USDC payments</li>
                         <li>Instant settlements</li>
-                        <li>1% transaction fee</li>
-                        <li>WooCommerce, Shopify &amp; custom APIs</li>
+                        <li>Custom SDK &amp; APIs</li>
                         <li>Global coverage</li>
                     </ul>
                     <a href="https://coinley.io" target="_blank" class="venture-link">Visit Coinley <span>›</span></a>
                 </div>
-                <div class="venture-card">
+                <div class="venture-card reveal">
                     <div class="venture-tag">Africa</div>
                     <h3>Elites.africa</h3>
                     <p class="body-text">Pay everyday bills with stablecoins across Nigeria. Airtime, data, electricity, cable TV, and more, powered by USDT and USDC.</p>
@@ -572,41 +682,14 @@
         </div>
     </section>
 
-    <!-- Experience -->
-    <section class="experience section-light" id="experience">
-        <div class="section-inner">
-            <h2 class="section-heading section-heading-light">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2024 — Present</div>
-                    <div class="timeline-title">Founder</div>
-                    <div class="timeline-company">Coinley &amp; Elites.africa</div>
-                    <div class="timeline-desc">Building the infrastructure layer for stablecoin payments globally.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2021 — 2022</div>
-                    <div class="timeline-title">Head of Products</div>
-                    <div class="timeline-company">Patricia Technologies</div>
-                    <div class="timeline-desc">Led product strategy for a leading crypto exchange with 1M+ users. 16 direct reports.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2015 — Present</div>
-                    <div class="timeline-title">Community &amp; Crypto Advocacy</div>
-                    <div class="timeline-company">dotNet Lagos, .NET Nigeria &amp; Azure Centre Usergroup</div>
-                    <div class="timeline-desc">Founder and organiser of developer communities across West Africa. Also advocate for crypto adoption in Africa through speaking, content, and mentorship. <a href="https://youtube.com/playlist?list=PL6X29hO_Vptafd_Y7tqr-2HBk1nsOvvRQ&si=5hXJOnhFjYF1CLJg" target="_blank" style="color: var(--apple-blue); text-decoration: none;">Watch my talks on YouTube &rarr;</a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Communities -->
     <section class="communities section-dark" id="communities">
-        <div class="section-inner">
+        <div class="section-inner reveal">
             <h2 class="section-heading">Communities I Run</h2>
             <p class="sub-headline">Building and nurturing the Microsoft developer ecosystem across Nigeria.</p>
 
             <div class="community-grid">
-                <div class="community-card">
+                <div class="community-card reveal">
                     <div class="community-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -615,7 +698,7 @@
                     <p class="body-text">A community of developers, IT Pros and hobbyists who use, build, and extend the Microsoft development stack. From C# and F# to .NET Core and Xamarin — real-world hands-on approach to the dotnet ecosystem.</p>
                     <a href="https://meetup.com/dotnet-lagos" target="_blank" class="community-link">Join on Meetup <span>›</span></a>
                 </div>
-                <div class="community-card">
+                <div class="community-card reveal">
                     <div class="community-icon">
                         <i class="fab fa-microsoft"></i>
                     </div>
@@ -630,24 +713,24 @@
 
     <!-- Content -->
     <section class="content-section" id="content">
-        <div class="section-inner">
+        <div class="section-inner reveal">
             <h2 class="section-heading section-heading-light">Podcasts &amp; Speaking</h2>
             <p class="sub-headline sub-headline-light">Speaking at fintech and crypto conferences globally. Creating content on product leadership, payments, and blockchain.</p>
 
             <div class="content-grid">
-                <div class="content-card">
+                <div class="content-card reveal">
                     <i class="fab fa-youtube"></i>
                     <h3>YouTube Talks</h3>
                     <p class="body-text-light">Talks on product leadership, crypto payments, and building in fintech.</p>
                     <a href="https://youtube.com/playlist?list=PL6X29hO_Vptafd_Y7tqr-2HBk1nsOvvRQ&si=5hXJOnhFjYF1CLJg" target="_blank" class="content-link">Watch Talks <span>›</span></a>
                 </div>
-                <div class="content-card">
+                <div class="content-card reveal">
                     <i class="fab fa-linkedin"></i>
                     <h3>LinkedIn Articles</h3>
                     <p class="body-text-light">Insights on product management, crypto, fintech, and building products for global markets.</p>
                     <a href="https://linkedin.com/in/falabiabisoye" target="_blank" class="content-link">Read Articles <span>›</span></a>
                 </div>
-                <div class="content-card">
+                <div class="content-card reveal">
                     <i class="fab fa-x-twitter"></i>
                     <h3>X / Twitter</h3>
                     <p class="body-text-light">Insights on product, crypto payments, and fintech. Follow for threads and updates.</p>
@@ -659,7 +742,7 @@
 
     <!-- Contact -->
     <section class="contact section-dark" id="contact">
-        <div class="section-inner">
+        <div class="section-inner reveal">
             <h2 class="section-heading">Let's Connect</h2>
             <p class="sub-headline">Interested in product partnerships, speaking opportunities, or fintech collaboration? I'd love to hear from you.</p>
             <div class="contact-buttons">
@@ -682,6 +765,77 @@
             <a href="https://x.com/Falabs" target="_blank">@Falabs</a>
         </div>
     </footer>
+
+    <!-- Apple Scroll Animations -->
+    <script>
+    (function() {
+        // Scroll reveal
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Nav scroll shadow
+        var nav = document.querySelector('nav');
+        var lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY;
+            if (scrollY > 20) {
+                nav.style.background = 'rgba(0, 0, 0, 0.92)';
+                nav.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.80)';
+                nav.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+            }
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        // Counter animation for stats
+        function animateCounter(el, target) {
+            var duration = 1200;
+            var start = 0;
+            var startTime = null;
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.floor(eased * target);
+                el.textContent = current.toLocaleString();
+                if (progress < 1) window.requestAnimationFrame(step);
+            }
+            window.requestAnimationFrame(step);
+        }
+
+        var statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var numberEl = entry.target.querySelector('.number');
+                    if (numberEl && numberEl.dataset.animated !== 'true') {
+                        numberEl.dataset.animated = 'true';
+                        var text = numberEl.textContent.replace(/[^0-9]/g, '');
+                        var suffix = numberEl.textContent.replace(/[0-9]/g, '');
+                        if (text.length > 1) {
+                            animateCounter(numberEl, parseInt(text));
+                        }
+                    }
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-cell').forEach(function(cell) {
+            statsObserver.observe(cell);
+        });
+    })();
+    </script>
 
 </body>
 </html>
